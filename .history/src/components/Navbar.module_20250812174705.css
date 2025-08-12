@@ -1,0 +1,206 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #242331;
+  padding: 1.2rem 2.5rem;
+  font-family: Arial, sans-serif;
+  border-top: 6px solid #f79719;
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+  color: whitesmoke
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropBtn {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #002855;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.dropBtn span {
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  min-width: 230px;
+  z-index: 999;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.dropdownMenu li {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.dropdownMenu li:hover {
+  background: #f5f5f5;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.applyBtnDesktop {
+  background: #ffb703;
+  color: #002855;
+  padding: 1.0rem 1.1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  width: 200px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.applyBtnDesktop:hover {
+  background: #e6a600;
+  transform: translateY(-1px);
+}
+
+/* Hamburger Menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: #002855;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .navLinks {
+    position: absolute;
+    top: 70px;
+    right: -260px;
+    flex-direction: column;
+    align-items: flex-start;
+    background: white;
+    width: 250px;
+    height: 100vh;
+    padding: 1rem;
+    box-shadow: -4px 0 10px rgba(0,0,0,0.1);
+    transition: right 0.3s ease;
+  }
+
+  .mobileOpen {
+    right: 0;
+  }
+
+  .dropdownMenu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 1rem;
+    transform: none;
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .applyBtnDesktop {
+    display: none;
+  }
+
+  .mobileApply {
+    margin-top: 1rem;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* Dropdown Animation for Mobile */
+.dropdownMenu {
+  position: absolute;
+  top: 110%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  min-width: 230px;
+  z-index: 999;
+
+  /* Animation setup */
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition:
+    max-height 0.3s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.show {
+  max-height: 500px; /* Large enough to fit menu */
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* Mobile Style Adjustments */
+@media (max-width: 768px) {
+  .dropdownMenu {
+    position: static;
+    box-shadow: none;
+    border-radius: 0;
+    padding-left: 1rem;
+    transform: none;
+    max-height: 0;
+    opacity: 0;
+    transition:
+      max-height 0.3s ease,
+      opacity 0.3s ease;
+  }
+
+  .show {
+    max-height: 500px;
+    opacity: 1;
+  }
+}

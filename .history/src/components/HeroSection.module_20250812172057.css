@@ -1,0 +1,78 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  background-image: url("/nursing.jpg"); 
+  background-size: cover;
+  background-position: center;
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+/* Dark gradient overlay for better text readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.6) 35%, rgba(0, 0, 0, 0) 65%);
+  z-index: 1;
+}
+
+.content {
+  position: relative;
+  z-index: 2;
+  max-width: 550px;
+  color: white;
+}
+
+.today {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+.textBox {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  border-radius: 6px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.liveChat {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #005eff;
+  color: white;
+  font-size: 0.95rem;
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  z-index: 3;
+}
+
+.liveChat:hover {
+  background-color: #0044bb;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+  .textBox {
+    padding: 1rem;
+    font-size: 0.9rem;
+  }
+}

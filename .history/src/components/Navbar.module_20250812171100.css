@@ -1,0 +1,83 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 0.8rem 2rem;
+  font-family: Arial, sans-serif;
+  border-bottom: 1px solid #eee;
+}
+
+.logo {
+  font-size: 1.1rem;
+  font-weight: normal;
+  color: #002855;
+}
+
+.logoBold {
+  font-weight: bold;
+  color: #002855;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  gap: 1.5rem;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropBtn {
+  background: none;
+  border: none;
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #444;
+  cursor: pointer;
+}
+
+.dropBtn span {
+  font-size: 0.7rem;
+  margin-left: 4px;
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: white;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  border-radius: 4px;
+  min-width: 220px;
+  z-index: 999;
+}
+
+.dropdownMenu li {
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dropdownMenu li:hover {
+  background: #f5f5f5;
+}
+
+.applyBtn {
+  background: #ffb703;
+  color: #002855;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.applyBtn:hover {
+  background: #e6a600;
+}
