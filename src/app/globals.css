@@ -19,7 +19,21 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  /* Default across the whole site */
+  font-family: var(--font-roboto), sans-serif;
+}
+
+/* Use Poppins explicitly */
+.poppins-text {
+  font-family: var(--font-poppins-sans), sans-serif;
+}
+/* Use Play explicitly */
+.play-text {
+  font-family: var(--font-play-sans), sans-serif;
+}
+
+/* Apply font smoothing to body for better rendering */
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
