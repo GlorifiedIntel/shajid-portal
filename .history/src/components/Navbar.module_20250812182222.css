@@ -77,9 +77,8 @@
 
 .applyBtnDesktop {
   background: #ffb703;
-  width:200px;
+  width:200px
   color: #002855;
-  text-align: center;
   padding: 1.2rem 1.3rem;
   border-radius: 6px;
   font-weight: bold;
