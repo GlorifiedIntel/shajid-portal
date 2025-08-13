@@ -40,7 +40,7 @@
 }
 
 .textBox {
-  background-color: #22577A;
+  background-color: #091540;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   width: 400px;
   padding: 1.5rem;
@@ -79,3 +79,4 @@
     font-size: 0.9rem;
   }
 }
+

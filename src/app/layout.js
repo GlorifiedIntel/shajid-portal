@@ -1,6 +1,7 @@
 import { Poppins, Roboto, Play } from "next/font/google";
 import "./globals.css";
 
+
 const poppinsSans = Poppins({
   variable: "--font-poppins-sans",
   weight: ["400", "500", "600", "700"],
@@ -32,7 +33,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${robotoSans.variable} ${poppinsSans.variable} ${playSans.variable}`}style={{ fontFamily: "var(--font-roboto), sans-serif" }}>
-        {children}
+           {children}
       </body>
     </html>
   );

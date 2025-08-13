@@ -2,21 +2,17 @@
 import { useState } from "react";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
+import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // icons
 
 export default function Navbar() {
   const [openDropdown, setOpenDropdown] = useState(null);
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-
-  const toggleDropdown = (menu) => {
-    setOpenDropdown(openDropdown === menu ? null : menu);
-  };
 
   return (
     <nav className={styles.navbar}>
       {/* Logo */}
       <div className={styles.logo}>
         <Image
-          src="/logo.png" // Place in /public
+          src="/logo.png"
           alt="Shajid Royal College of Nursing and Midwifery"
           width={314}
           height={89}
@@ -24,27 +20,14 @@ export default function Navbar() {
         />
       </div>
 
-      {/* Hamburger Icon for Mobile */}
-      <div
-        className={styles.hamburger}
-        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-      >
-        <span></span>
-        <span></span>
-        <span></span>
-      </div>
-
       {/* Menu */}
-      <ul
-        className={`${styles.navLinks} ${
-          mobileMenuOpen ? styles.mobileOpen : ""
-        }`}
-      >
-        <li className={styles.dropdown}>
-          <button
-            className={styles.dropBtn}
-            onClick={() => toggleDropdown("prospective")}
-          >
+      <ul className={styles.navLinks}>
+        <li
+          className={styles.dropdown}
+          onMouseEnter={() => setOpenDropdown("prospective")}
+          onMouseLeave={() => setOpenDropdown(null)}
+        >
+          <button className={styles.dropBtn}>
             Prospective Students <span>▼</span>
           </button>
           <ul
@@ -62,11 +45,12 @@ export default function Navbar() {
           </ul>
         </li>
 
-        <li className={styles.dropdown}>
-          <button
-            className={styles.dropBtn}
-            onClick={() => toggleDropdown("admitted")}
-          >
+        <li
+          className={styles.dropdown}
+          onMouseEnter={() => setOpenDropdown("admitted")}
+          onMouseLeave={() => setOpenDropdown(null)}
+        >
+          <button className={styles.dropBtn}>
             Admitted Students <span>▼</span>
           </button>
           <ul
@@ -80,19 +64,18 @@ export default function Navbar() {
             <li>Facebook Group</li>
           </ul>
         </li>
-
-        {/* Apply Now in mobile menu */}
-        <li className={styles.mobileApply}>
-          <a href="/apply" className={styles.applyBtn}>
-            Apply Now
-          </a>
-        </li>
       </ul>
 
-      {/* Apply Now for desktop */}
-      <a href="/apply" className={styles.applyBtnDesktop}>
-        Apply Now
-      </a>
+      {/* Action Buttons */}
+      <div className={styles.actions}>
+        <a href="/sign-in" className={styles.loginBtn}>
+          <FaSignInAlt className={styles.icon} /> Sign In
+        </a>
+        <a href="/create-account" className={styles.createAccountBtn}>
+          <FaUserPlus className={styles.icon} /> Create Account
+        </a>
+      </div>
     </nav>
   );
 }
+
