@@ -3,7 +3,7 @@ import styles from './ProgramsSection.module.css';
 export default function ProgramsSection() {
   const programs = [
     { icon: 'bi-laptop-fill', title: 'Business & Technology'},
-    { icon: 'fa-solid fa-brain', title: 'Counseling & Psychology' },
+    { icon: 'bi-brain', title: 'Counseling & Psychology' },
     { icon: 'bi-scale', title: 'Criminal Justice & Legal Studies' },
     { icon: 'bi-heart-pulse-fill', title: 'Healthcare' },
     { icon: 'bi-clipboard2-pulse', title: 'Nursing' },
