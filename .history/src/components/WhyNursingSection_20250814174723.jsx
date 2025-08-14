@@ -13,7 +13,7 @@ export default function WhyNursingSection() {
         </div>
 
         <div className={styles.item}>
-          <i className="bi bi-book-fill"></i>
+          <i className="bi bi-journal-bookmark-fill"></i>
           <h3>Curriculum integrates theory and practice</h3>
           <p>Our co-requisite courses, taken in sequence, bring knowledge and practice together in a highly intentional way.</p>
         </div>
