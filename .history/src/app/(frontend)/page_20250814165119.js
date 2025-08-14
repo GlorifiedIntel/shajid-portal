@@ -10,7 +10,7 @@ export default function Home() {
     <>
       <HeroSection />
       <BannerSection />
-      <WhyNursingSection />
+     <WhyNursingSection />
       {/* Add other components or sections as needed */}
     </>
   );

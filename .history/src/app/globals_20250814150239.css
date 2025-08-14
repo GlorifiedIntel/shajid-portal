@@ -59,7 +59,6 @@ a {
 .copyright-bar {
   background-color: #333; /* Dark gray background */
   padding: 15px;
-  padding-top: 30px;
   text-align: center;
   height: 100px;
 }
@@ -80,9 +79,5 @@ a {
 .developer:hover,
 .company:hover {
   text-decoration: underline;
-  color: rgb(148, 235, 162);
-}
-
-.developer, .company {
-  color:rgb(240, 148, 87)
+  color: sandybrown;
 }

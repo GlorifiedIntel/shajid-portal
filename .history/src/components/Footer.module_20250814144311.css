@@ -94,3 +94,21 @@
   background-color: #d6dee8;
 }
 
+/*Copyright Section */
+.copyright-bar {
+  background-color: #333; /* Dark gray background */
+  padding: 15px 10px;
+  text-align: center;
+  height: 100px;
+}
+
+.copyright-bar p {
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.5;
+}
+
+.copyright-bar strong {
+  color: #ffffff;
+}

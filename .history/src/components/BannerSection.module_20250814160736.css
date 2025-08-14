@@ -1,0 +1,58 @@
+.bannerSection {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: linear-gradient(135deg, #4b0082, #5b2c6f);
+  padding: 50px;
+  color: white;
+}
+
+.bannerContent {
+  max-width: 50%;
+}
+
+.bannerContent h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.bannerContent p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 30px;
+}
+
+.bannerButtons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 12px 20px;
+  font-size: 1rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.btnYellow {
+  background-color: gold;
+  color: black;
+}
+
+.btnOutline {
+  border: 2px solid gold;
+  color: white;
+}
+
+.bannerImage img {
+  max-width: 400px;
+  border-radius: 10px;
+}
+
+.btn:hover {
+  background-color: whitesmoke;
+  color: #333;
+  outline-color: none;
+}

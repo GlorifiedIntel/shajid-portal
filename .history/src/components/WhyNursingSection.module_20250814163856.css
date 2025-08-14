@@ -1,0 +1,41 @@
+.whySection {
+  background-color: #ff6f00; /* orange background */
+  color: #111;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+}
+
+.heading {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.icon {
+  font-size: 2rem;
+  color: #333;
+}
+
+.item h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #222;
+}

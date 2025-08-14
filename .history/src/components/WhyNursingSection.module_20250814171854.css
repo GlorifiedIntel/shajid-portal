@@ -1,0 +1,44 @@
+.whySection {
+  background-color: #424242;
+  color: #f7f2f2;
+  padding: 3rem 2rem;
+}
+
+.heading {
+  text-align: left;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: bold;
+  font-family: 'Play', sans-serif;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* Always 3 columns */
+  grid-template-rows: repeat(2, auto);   /* 2 rows */
+  gap: 2rem;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item i {
+  font-size: 2rem;
+  color: #f3bd0a;
+  text-align: center;
+}
+
+.item h3 {
+  font-size: 1.1rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #fff;
+}
