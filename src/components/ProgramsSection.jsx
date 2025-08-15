@@ -2,10 +2,10 @@ import styles from './ProgramsSection.module.css';
 
 export default function ProgramsSection() {
   const programs = [
-    { icon: 'bi-laptop-fill', title: 'Business & Technology'},
-    { icon: 'fa-solid fa-brain', title: 'Counseling & Psychology' },
-    { icon: 'bi-scale', title: 'Criminal Justice & Legal Studies' },
-    { icon: 'bi-heart-pulse-fill', title: 'Healthcare' },
+    { icon: 'bi-laptop-fill', title: 'Basic Nursing'},
+    { icon: 'fa-solid fa-brain', title: 'Community Health Nursing' },
+    { icon: 'bi-scale', title: 'ND/HND Nursing' },
+    { icon: 'bi-heart-pulse-fill', title: 'Basic Midwifery' },
     { icon: 'bi-clipboard2-pulse', title: 'Nursing' },
     { icon: 'bi-capsule', title: 'Pharmacy' },
     { icon: 'bi-bank', title: 'Public Administration' },

@@ -12,6 +12,7 @@
 .logoSection {
   flex: 1 1 200px;
   margin-right: 40px;
+  text-align: center;
 }
 
 .logo {
@@ -21,15 +22,15 @@
   color: #333;
   border-bottom: 2px solid #333;
   display: inline-block;
-  text-align: center;
-}
+ }
 
 .logoText {
   margin-top: 10px;
   font-size: 20px;
   letter-spacing: 2px;
   line-height: 1.4;
-  text-align: center;
+  
+  color: #555;
 }
 
 .linkSections {
@@ -75,6 +76,7 @@
   margin-top: 10px;
   display: flex;
   gap: 16px;
+  text-align: center;
  
 }
 
@@ -94,3 +96,6 @@
   background-color: #d6dee8;
 }
 
+.logoClickable {
+  cursor: pointer;
+}

@@ -1,0 +1,87 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #d9534f, #c9302c);
+  padding: 20px;
+}
+
+.content {
+  text-align: center;
+  color: white;
+  max-width: 500px;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.errorCode {
+  font-size: 120px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
+.errorMessage {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 16px;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.retryButton,
+.homeButton {
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.retryButton {
+  background-color: white;
+  color: #d9534f;
+  border: none;
+  cursor: pointer;
+}
+
+.retryButton:hover {
+  background-color: #b52b27;
+  color: white;
+}
+
+.homeButton {
+  background-color: white;
+  color: #d9534f;
+}
+
+.homeButton:hover {
+  background-color: #b52b27;
+  color: white;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 500px) {
+  .errorCode {
+    font-size: 80px;
+  }
+
+  .errorMessage {
+    font-size: 22px;
+  }
+}

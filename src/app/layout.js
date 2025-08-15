@@ -1,10 +1,10 @@
 import { Poppins, Roboto, Play } from "next/font/google";
 import "./globals.css";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 import CopyrightSection from "../components/CopyrightSection";
 import 'bootstrap-icons/font/bootstrap-icons.css';
-
+import ClientSessionWrapper from "./ClientSessionWrapper";
 
 const poppinsSans = Poppins({
   variable: "--font-poppins-sans",
@@ -29,18 +29,23 @@ const playSans = Play({
 
 export const metadata = {
   title: "Shajid Royal College Portal",
-  description: "About The Shajid Royal College of Nursing and Midwifery Student Portal is a secure, user-friendly online platform designed to support students throughout their academic journey. Through the portal, students can easily access essential resources such as course materials, lecture schedules, examination timetables, academic results, and fee payment options.",
+  description:
+    "About The Shajid Royal College of Nursing and Midwifery Student Portal is a secure, user-friendly online platform designed to support students throughout their academic journey. Through the portal, students can easily access essential resources such as course materials, lecture schedules, examination timetables, academic results, and fee payment options.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${robotoSans.variable} ${poppinsSans.variable} ${playSans.variable}`}style={{ fontFamily: "var(--font-roboto), sans-serif" }}>
+        className={`${robotoSans.variable} ${poppinsSans.variable} ${playSans.variable}`}
+        style={{ fontFamily: "var(--font-roboto), sans-serif" }}
+      >
+        <ClientSessionWrapper>
           <Navbar />
-           {children}
-           <Footer />
-           <CopyrightSection />
+          {children}
+          <Footer />
+          <CopyrightSection />
+        </ClientSessionWrapper>
       </body>
     </html>
   );

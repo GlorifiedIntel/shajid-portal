@@ -80,3 +80,22 @@
   }
 }
 
+.startAppBtn {
+  display: inline-block;
+  width: 300px;
+  margin-top: 20px;
+  padding: 18px 24px;
+  background-color: #007090;
+  color: #fff;
+  font-weight: bold;
+  font-family: 'Play', sans-serif;
+  border-radius: 6px;
+  text-decoration: none;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.startAppBtn:hover {
+  background-color: #0d1925;
+  color: #fff;
+}

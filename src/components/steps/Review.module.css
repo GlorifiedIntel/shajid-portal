@@ -1,0 +1,172 @@
+/* Review.module.css */
+
+.reviewContainer {
+  width: 900px;
+  margin: 0 auto;
+  padding: 1rem 2rem 3rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgb(0 0 0 / 0.1);
+}
+
+.heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #38383d;
+  text-align: center;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+
+.sectionHeading {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: #424349;
+  border-bottom: 2px solid #3f51b5;
+  padding-bottom: 4px;
+}
+
+.subSection {
+  margin-bottom: 1.25rem;
+  padding-left: 1rem;
+  border-left: 3px solid #2f2f31;
+}
+
+.reviewTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  box-shadow: 0 0 5px rgb(0 0 0 / 0.05);
+  background: #fafafa;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.reviewTable th,
+.reviewTable td {
+  padding: 8px 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.reviewTable thead {
+  background-color: #333745;
+  color: white;
+}
+
+.reviewTable tbody tr:hover {
+  background-color: #e8eaf6;
+}
+
+.tableKey {
+  font-weight: 600;
+  color: #303f9f;
+  width: 40%;
+  vertical-align: top;
+}
+
+.tableValue {
+  color: #444;
+  width: 60%;
+  word-break: break-word;
+}
+
+.passportPhotoContainer {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.passportPhoto {
+  max-width: 150px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 1px 8px rgb(0 0 0 / 0.2);
+  border: 1px solid #ccc;
+}
+
+.downloadBtn,
+.submitBtn,
+.backButton {
+  cursor: pointer;
+  padding: 10px 22px;
+  font-weight: 600;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.downloadBtn {
+  background-color: #3949ab;
+  color: white;
+  margin: 1rem 0;
+}
+
+.downloadBtn:hover:not(:disabled) {
+  background-color: #303f9f;
+}
+
+.submitBtn {
+  background-color: #1e88e5;
+  color: white;
+  margin-left: 1rem;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: #1565c0;
+}
+
+.backButton {
+  background-color: #b0bec5;
+  color: #263238;
+}
+
+.backButton:hover:not(:disabled) {
+  background-color: #90a4ae;
+}
+
+.downloadBtn:disabled,
+.submitBtn:disabled,
+.backButton:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+.spinner {
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top: 3px solid white;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  animation: spin 0.8s linear infinite;
+}
+
+.submittedMessage {
+  margin-top: 2rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #388e3c;
+  text-align: center;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

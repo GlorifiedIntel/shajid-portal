@@ -5,7 +5,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './createAccount.module.css';
-import Navbar from '@/components/Navbar';
+
 
 export default function CreateAccount() {
   const [formData, setFormData] = useState({
@@ -82,8 +82,7 @@ export default function CreateAccount() {
 
   return (
     <>
-      <Navbar />
-      <div className={styles.container}>
+       <div className={styles.container}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.logoWrapper}>
             <Image src="/logo2.png" alt="Logo" width={80} height={80} className={styles.logo} />

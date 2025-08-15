@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import styles from "./Navbar.module.css";
 import { FaSignInAlt, FaUserPlus } from "react-icons/fa"; // icons
@@ -10,15 +11,18 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       {/* Logo */}
-      <div className={styles.logo}>
-        <Image
-          src="/logo.png"
-          alt="Shajid Royal College of Nursing and Midwifery"
-          width={314}
-          height={89}
-          priority
-        />
-      </div>
+          <div className={styles.logo}>
+            <Link href="/" passHref>
+              <Image
+                src="/logo.png"
+                alt="Shajid Royal College of Nursing and Midwifery"
+                width={314}
+                height={89}
+                priority
+                style={{ cursor: "pointer" }}
+              />
+            </Link>
+          </div>
 
       {/* Menu */}
       <ul className={styles.navLinks}>
@@ -63,6 +67,13 @@ export default function Navbar() {
             <li>Advising & Support</li>
             <li>Facebook Group</li>
           </ul>
+        </li>
+
+        {/* Apply Button */}
+        <li>
+          <a href="/apply" className={styles.applyBtn}>
+            Apply
+          </a>
         </li>
       </ul>
 

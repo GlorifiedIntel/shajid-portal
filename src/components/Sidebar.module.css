@@ -1,0 +1,78 @@
+.sidebar {
+  background-color: #0D3B66; /* blue-600 */
+  color: white;
+  padding: 1.5rem;
+  width: 16rem;
+  min-height: 100vh;
+}
+
+.stepItem {
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0.7;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  outline: none;
+}
+
+.stepItem:hover:not(.disabled) {
+  opacity: 0.9;
+  background-color: rgba(255 255 255 / 0.1);
+  border-radius: 0.5rem;
+}
+
+.stepItem.active {
+  font-weight: bold;
+  opacity: 1;
+  cursor: default;
+}
+
+.stepItem.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  pointer-events: auto; 
+  user-select: none;    
+}
+
+.stepCircle {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  border: 1px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  flex-shrink: 0;
+  user-select: none;
+  font-weight: normal;
+}
+
+.stepCircle.active {
+  background-color: white;
+  color: #2563eb;
+  border: none;
+  font-weight: bold;   
+}
+
+.stepCircle.disabledCircle {
+  background-color: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: rgba(255, 255, 255, 0.4);
+}
+
+.stepText {
+  display: flex;
+  flex-direction: column;
+}
+
+.stepNumber {
+  font-size: 0.875rem;
+}
+
+.stepLabel {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}

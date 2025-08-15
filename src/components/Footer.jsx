@@ -1,14 +1,16 @@
 import styles from './Footer.module.css';
-
+import Link from 'next/link';
 
 export default function Footer() {
   return (
     <footer className={styles.footer}>
       <div className={styles.logoSection}>
+        <Link href="/" passHref>
         <h1 className={styles.logo}>SHAJID ROYAL</h1>
         <div className={styles.logoText}>
           <div>COLLEGE OF NURSING</div>
         </div>
+        </Link>
 
         {/* ✅ Social Icons */}
         <div className={styles.socialIcons}>
