@@ -16,7 +16,10 @@ export async function POST(req) {
     const db = mongoose.connection;
     const collection = db.collection('applications');
 
-    const filter = { userId: new mongoose.Types.ObjectId(userId) };
+    // ✅ Use createFromHexString instead of deprecated constructor
+    const objectId = mongoose.Types.ObjectId.createFromHexString(userId);
+
+    const filter = { userId: objectId };
     const updateDoc = {
       $set: {
         step4: data,
@@ -24,7 +27,7 @@ export async function POST(req) {
       },
       $setOnInsert: {
         createdAt: new Date(),
-        userId: new mongoose.Types.ObjectId(userId),
+        userId: objectId,
       },
     };
     const options = { upsert: true };

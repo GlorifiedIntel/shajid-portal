@@ -1,8 +1,8 @@
 'use client';
 
-import { useSession } from 'next-auth/react';  // import session hook
+import { useSession } from 'next-auth/react';  
 import { useEffect } from 'react';
-import { useRouter } from 'next/navigation';  // client side router in Next.js 13 app dir
+import { useRouter } from 'next/navigation';  
 
 import { FormProvider, useFormStep } from '@/context/FormContext';
 import Sidebar from '@/components/Sidebar';
@@ -22,7 +22,7 @@ export default function ApplyPage() {
   useEffect(() => {
     if (status === 'unauthenticated') {
       // redirect if not logged in
-      router.push('/(auth)/sign-in'); // or your login page path
+      router.push('/(auth)/sign-in'); 
     }
   }, [status, router]);
 

@@ -1,5 +1,6 @@
 import { dbConnect } from '../../../../lib/mongodb';
 import mongoose from 'mongoose';
+import { ObjectId } from 'bson'; // ✅ use bson’s ObjectId
 
 export async function POST(req) {
   try {
@@ -16,7 +17,10 @@ export async function POST(req) {
     const db = mongoose.connection;
     const collection = db.collection('applications');
 
-    const filter = { userId: new mongoose.Types.ObjectId(userId) };
+    // ✅ use ObjectId safely
+    const userObjectId = new ObjectId(userId);
+
+    const filter = { userId: userObjectId };
     const updateDoc = {
       $set: {
         step5: data,
@@ -24,7 +28,7 @@ export async function POST(req) {
       },
       $setOnInsert: {
         createdAt: new Date(),
-        userId: new mongoose.Types.ObjectId(userId),
+        userId: userObjectId,
       },
     };
     const options = { upsert: true };

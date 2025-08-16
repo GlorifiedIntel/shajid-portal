@@ -16,7 +16,17 @@ export async function POST(req) {
     const db = mongoose.connection;
     const collection = db.collection('applications');
 
-    const filter = { userId: new mongoose.Types.ObjectId(userId) };
+    // ✅ Use createFromHexString if userId is a string
+    let objectId;
+    try {
+      objectId = mongoose.Types.ObjectId.createFromHexString(userId);
+    } catch (e) {
+      return new Response(
+        JSON.stringify({ error: 'Invalid userId format' }),
+        { status: 400 }
+      );
+    }
+
     const now = new Date();
 
     const updateDoc = {
@@ -28,16 +38,20 @@ export async function POST(req) {
       },
       $setOnInsert: {
         createdAt: now,
-        userId: new mongoose.Types.ObjectId(userId),
+        userId: objectId,
       },
     };
 
     const options = { upsert: true };
 
-    const result = await collection.updateOne(filter, updateDoc, options);
+    const result = await collection.updateOne({ userId: objectId }, updateDoc, options);
 
     return new Response(
-      JSON.stringify({ message: 'Application submitted successfully', createdAt: now }),
+      JSON.stringify({
+        message: 'Application submitted successfully',
+        createdAt: now,
+        upserted: result.upsertedCount > 0
+      }),
       { status: 200 }
     );
   } catch (error) {

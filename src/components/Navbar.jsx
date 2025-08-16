@@ -11,18 +11,18 @@ export default function Navbar() {
   return (
     <nav className={styles.navbar}>
       {/* Logo */}
-          <div className={styles.logo}>
-            <Link href="/" passHref>
-              <Image
-                src="/logo.png"
-                alt="Shajid Royal College of Nursing and Midwifery"
-                width={314}
-                height={89}
-                priority
-                style={{ cursor: "pointer" }}
-              />
-            </Link>
-          </div>
+      <div className={styles.logo}>
+        <Link href="/" passHref>
+          <Image
+            src="/logo.png"
+            alt="Shajid Royal College of Nursing and Midwifery"
+            width={314}
+            height={89}
+            priority
+            style={{ cursor: "pointer" }}
+          />
+        </Link>
+      </div>
 
       {/* Menu */}
       <ul className={styles.navLinks}>
@@ -43,7 +43,9 @@ export default function Navbar() {
             <li>Prospective Student Info</li>
             <li>Fees & Financial Assistance</li>
             <li>Graduation Requirements</li>
-            <li>Apply Now</li>
+            <li>
+              <Link href="/apply">Apply Now</Link>
+            </li>
             <li>Advising & Support</li>
             <li>FAQs</li>
           </ul>
@@ -71,22 +73,21 @@ export default function Navbar() {
 
         {/* Apply Button */}
         <li>
-          <a href="/apply" className={styles.applyBtn}>
+          <Link href="/apply" className={styles.applyBtn}>
             Apply
-          </a>
+          </Link>
         </li>
       </ul>
 
       {/* Action Buttons */}
       <div className={styles.actions}>
-        <a href="/sign-in" className={styles.loginBtn}>
+        <Link href="/(auth)/sign-in" className={styles.loginBtn}>
           <FaSignInAlt className={styles.icon} /> Sign In
-        </a>
-        <a href="/create-account" className={styles.createAccountBtn}>
+        </Link>
+        <Link href="/(auth)/create-account" className={styles.createAccountBtn}>
           <FaUserPlus className={styles.icon} /> Create Account
-        </a>
+        </Link>
       </div>
     </nav>
   );
 }
-

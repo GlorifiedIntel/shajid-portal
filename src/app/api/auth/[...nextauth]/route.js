@@ -35,7 +35,7 @@ export const authOptions = {
     }),
   ],
   pages: {
-    signIn: '/sign-in', // Make sure your sign-in page is correctly routed
+    signIn: '/(auth)/sign-in',
   },
   session: {
     strategy: 'jwt',

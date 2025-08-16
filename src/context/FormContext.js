@@ -12,7 +12,7 @@ export function FormProvider({ children }) {
   const [lastUser, setLastUser] = useState(null);
 
   // ✅ Declare resetForm early so it's available in useEffect below
-  const resetForm = () => {
+  const resetForm = React.useCallback(() => {
     setFormData({});
     setStep(1);
     if (hasMounted) {
@@ -20,7 +20,7 @@ export function FormProvider({ children }) {
       localStorage.removeItem('formStep');
       localStorage.removeItem('formUser');
     }
-  };
+  }, [hasMounted]);
 
   // Mark as mounted
   useEffect(() => {

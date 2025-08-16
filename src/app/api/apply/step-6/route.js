@@ -16,7 +16,10 @@ export async function POST(req) {
     const db = mongoose.connection;
     const collection = db.collection('applications');
 
-    const filter = { userId: new mongoose.Types.ObjectId(userId) };
+    // ✅ Convert userId safely (string -> ObjectId)
+    const objectUserId = mongoose.Types.ObjectId.createFromHexString(userId);
+
+    const filter = { userId: objectUserId };
     const updateDoc = {
       $set: {
         step6: data,
@@ -24,7 +27,7 @@ export async function POST(req) {
       },
       $setOnInsert: {
         createdAt: new Date(),
-        userId: new mongoose.Types.ObjectId(userId),
+        userId: objectUserId,
       },
     };
     const options = { upsert: true };

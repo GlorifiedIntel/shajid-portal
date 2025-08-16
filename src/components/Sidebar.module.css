@@ -1,9 +1,13 @@
 .sidebar {
-  background-color: #0D3B66; /* blue-600 */
-  color: white;
+  background-color: #0D1821; 
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin-left: 5px;
+  color: #fff;
   padding: 1.5rem;
   width: 16rem;
   min-height: 100vh;
+  border-radius: 10px;
 }
 
 .stepItem {
