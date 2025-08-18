@@ -22,7 +22,7 @@ export default function ApplyPage() {
   useEffect(() => {
     if (status === 'unauthenticated') {
       // redirect if not logged in
-      router.push('/(auth)/sign-in'); 
+      router.push('/sign-in'); 
     }
   }, [status, router]);
 
@@ -61,12 +61,17 @@ export default function ApplyPage() {
 
   return (
     <FormProvider>
-      <div className="min-h-screen flex items-start">
-        <Sidebar />
-        <div className={styles.applicationContainer}>
+      <div className={styles.layout}>
+        {/* Left Column - Sidebar */}
+        <aside className={styles.sidebar}>
+          <Sidebar />
+        </aside>
+
+        {/* Right Column - Form */}
+        <main className={styles.mainContent}>
           <h1 className={styles.pageTitle}>Online Application Form</h1>
           <StepRenderer />
-        </div>
+        </main>
       </div>
     </FormProvider>
   );

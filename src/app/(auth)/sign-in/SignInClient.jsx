@@ -89,7 +89,7 @@ export default function SignInClient() {
         </div>
 
         <p className={styles.forgotPassword}>
-          <Link href="/(auth)/forgot-password" className={styles.link}>Forgot Password?</Link>
+          <Link href="/forgot-password" className={styles.link}>Forgot Password?</Link>
         </p>
 
         <button type="submit" className={styles.submitButton} disabled={loading}>
@@ -97,7 +97,7 @@ export default function SignInClient() {
         </button>
 
         <p className={styles.signUpText}>
-          Don’t have an account? <Link href="/(auth)/create-account" className={styles.link}>Create one</Link>
+          Don’t have an account? <Link href="/create-account" className={styles.link}>Create one</Link>
         </p>
       </form>
     </div>

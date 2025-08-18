@@ -10,14 +10,14 @@ import styles from './PersonalInfo.module.css';
 
 const schema = z.object({
   fullName: z.string().min(3, 'Full name is required'),
-  gender: z.enum(['Male', 'Female'], 'Gender is required'),
+  gender: z.enum(['Male', 'Female'], { required_error: 'Gender is required' }),
   email: z.string().email('Invalid email address'),
   phone: z.string().min(7, 'Phone number is required'),
   address: z.string().min(5, 'Contact address is required'),
   dob: z.string().min(1, 'Date of birth is required'),
   parentName: z.string().min(3, 'Parent/Guardian name is required'),
   parentAddress: z.string().min(5, "Parent's contact address is required"),
-  // no validation for photo because it’s optional
+  // photo is optional
 });
 
 export default function PersonalInfo() {
@@ -84,7 +84,7 @@ export default function PersonalInfo() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           userId: session?.user?.id,
-          personalInfo: data,  // <-- fixed key here
+          personalInfo: data,
         }),
       });
     } catch (error) {
@@ -99,15 +99,21 @@ export default function PersonalInfo() {
       <h2 className={styles.heading}>Step 1: Personal Information</h2>
       <p className={styles.subtext}>Please fill in the required details below.</p>
 
+      {/* Full Name */}
+      <label className={styles.label} htmlFor="fullName">Full Names</label>
       <input
+        id="fullName"
         {...register('fullName')}
-        placeholder="Full Names"
+        placeholder="Enter your full name"
         className={styles.input}
         aria-invalid={errors.fullName ? 'true' : 'false'}
       />
       {errors.fullName && <p className={styles.error}>{errors.fullName.message}</p>}
 
+      {/* Gender */}
+      <label className={styles.label} htmlFor="gender">Gender</label>
       <select
+        id="gender"
         {...register('gender')}
         className={styles.input}
         aria-invalid={errors.gender ? 'true' : 'false'}
@@ -118,31 +124,43 @@ export default function PersonalInfo() {
       </select>
       {errors.gender && <p className={styles.error}>{errors.gender.message}</p>}
 
+      {/* Email */}
+      <label className={styles.label} htmlFor="email">Email Address</label>
       <input
+        id="email"
         {...register('email')}
-        placeholder="Email Address"
+        placeholder="Enter your email"
         className={styles.input}
         aria-invalid={errors.email ? 'true' : 'false'}
       />
       {errors.email && <p className={styles.error}>{errors.email.message}</p>}
 
+      {/* Phone */}
+      <label className={styles.label} htmlFor="phone">Phone Number</label>
       <input
+        id="phone"
         {...register('phone')}
-        placeholder="Phone Number"
+        placeholder="Enter your phone number"
         className={styles.input}
         aria-invalid={errors.phone ? 'true' : 'false'}
       />
       {errors.phone && <p className={styles.error}>{errors.phone.message}</p>}
 
+      {/* Address */}
+      <label className={styles.label} htmlFor="address">Contact Address</label>
       <input
+        id="address"
         {...register('address')}
-        placeholder="Contact Address"
+        placeholder="Enter your contact address"
         className={styles.input}
         aria-invalid={errors.address ? 'true' : 'false'}
       />
       {errors.address && <p className={styles.error}>{errors.address.message}</p>}
 
+      {/* Date of Birth */}
+      <label className={styles.label} htmlFor="dob">Date of Birth</label>
       <input
+        id="dob"
         {...register('dob')}
         type="date"
         className={styles.input}
@@ -150,17 +168,23 @@ export default function PersonalInfo() {
       />
       {errors.dob && <p className={styles.error}>{errors.dob.message}</p>}
 
+      {/* Parent/Guardian Name */}
+      <label className={styles.label} htmlFor="parentName">Parent/Guardian Name</label>
       <input
+        id="parentName"
         {...register('parentName')}
-        placeholder="Parent/Guardian Name"
+        placeholder="Enter parent/guardian name"
         className={styles.input}
         aria-invalid={errors.parentName ? 'true' : 'false'}
       />
       {errors.parentName && <p className={styles.error}>{errors.parentName.message}</p>}
 
+      {/* Parent Address */}
+      <label className={styles.label} htmlFor="parentAddress">Parent's Contact Address</label>
       <input
+        id="parentAddress"
         {...register('parentAddress')}
-        placeholder="Parent's Contact Address"
+        placeholder="Enter parent's contact address"
         className={styles.input}
         aria-invalid={errors.parentAddress ? 'true' : 'false'}
       />

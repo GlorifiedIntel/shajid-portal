@@ -6,32 +6,52 @@ export default function Footer() {
     <footer className={styles.footer}>
       <div className={styles.logoSection}>
         <Link href="/" passHref>
-        <h1 className={styles.logo}>SHAJID ROYAL</h1>
-        <div className={styles.logoText}>
-          <div>COLLEGE OF NURSING</div>
-        </div>
+          <h1 className={styles.logo}>SHAJID ROYAL</h1>
+          <div className={styles.logoText}>
+            <div>COLLEGE OF NURSING</div>
+          </div>
         </Link>
 
-        {/* ✅ Social Icons */}
+        {/* ✅ Social Icons with aria-labels */}
         <div className={styles.socialIcons}>
-            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer">
-                <i className="bi bi-instagram"></i>
-            </a>
-            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
-                <i className="bi bi-facebook"></i>
-            </a>
-            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
-                <i className="bi bi-linkedin"></i>
-            </a>
-            <a href="https://www.youtube.com" target="_blank" rel="noopener noreferrer">
-                <i className="bi bi-youtube"></i>
-            </a>
+          <a
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Instagram"
+          >
+            <i className="bi bi-instagram" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Follow us on Facebook"
+          >
+            <i className="bi bi-facebook" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Connect with us on LinkedIn"
+          >
+            <i className="bi bi-linkedin" aria-hidden="true"></i>
+          </a>
+          <a
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Subscribe to our YouTube channel"
+          >
+            <i className="bi bi-youtube" aria-hidden="true"></i>
+          </a>
         </div>
       </div>
 
       <div className={styles.linkSections}>
         <div className={styles.section}>
-          <h3>Quick Links</h3>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="#">Apply</a></li>
             <li><a href="#">Application Deadlines</a></li>
@@ -48,7 +68,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.section}>
-          <h3>Information</h3>
+          <h2>Information</h2>
           <ul>
             <li><a href="#">Certificates & Diplomas</a></li>
             <li><a href="#">Shajid Royal College</a></li>
@@ -64,7 +84,7 @@ export default function Footer() {
         </div>
 
         <div className={styles.section}>
-          <h3>Partner Programs</h3>
+          <h2>Partner Programs</h2>
           <ul>
             <li><a href="#">Microbiology</a></li>
             <li><a href="#">Welfare and Self-Reliance</a></li>

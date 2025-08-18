@@ -1,16 +1,15 @@
 .applicationContainer {
   padding: 2rem;
-  width: 900px;
+  width: 800px;
   margin: 0 auto;
   font-family: Arial, sans-serif;
   margin-top: 0;
 }
 
 .instructions {
-  background-color: #f9f9f9;
+
   padding: 1.5rem;
   border-radius: 8px;
-  margin-top: 1rem;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
@@ -29,16 +28,35 @@
   font-size: 1.2rem;
 }
 
-.pageTitle {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: center;
-  color: #2c3e50;
-}
-
 .instructionsHeading {
   font-size: 1.5rem;
   font-weight: 600;
   color: #34495e;
   margin-bottom: 1rem;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr; 
+  min-height: 100vh;
+}
+
+.sidebar {
+  background: #fff; 
+  padding: 1rem;
+  
+}
+
+.mainContent {
+  padding: 2rem;
+  width: 900px;
+  font-family: Arial, sans-serif;
+}
+
+.pageTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2c3e50;
 }

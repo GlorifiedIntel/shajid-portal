@@ -1,25 +1,31 @@
+// middleware.js
 import { withAuth } from 'next-auth/middleware';
 import { NextResponse } from 'next/server';
 
-export default withAuth({
-  pages: {
-    signIn: '/auth/sign-in',
+export default withAuth(
+  function middleware(req) {
+    const { pathname } = req.nextUrl;
+    const token = req.nextauth.token;
+
+    // If not signed in, redirect is already handled by withAuth "pages.signIn"
+    if (!token) {
+      return NextResponse.redirect(new URL('/sign-in', req.url));
+    }
+
+    // If user tries to access /admin but isn't an admin → redirect to /dashboard
+    if (pathname.startsWith('/admin') && token?.role !== 'admin') {
+      return NextResponse.redirect(new URL('/dashboard', req.url));
+    }
+
+    return NextResponse.next();
   },
-  callbacks: {
-    authorized: ({ token, req }) => {
-      const { pathname } = req.nextUrl;
-
-      // Protect /admin routes for only admin users
-      if (pathname.startsWith('/admin')) {
-        return token?.role === 'admin';
-      }
-
-      // Allow access to /dashboard if user is logged in
-      return !!token;
+  {
+    pages: {
+      signIn: '/sign-in', // where unauthenticated users go
     },
-  },
-});
+  }
+);
 
 export const config = {
-  matcher: ['/dashboard', '/admin/:path*'],
+  matcher: ['/dashboard/:path*', '/admin/:path*'],
 };

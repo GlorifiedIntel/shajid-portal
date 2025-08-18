@@ -1,0 +1,48 @@
+.sidebar {
+  width: 250px;
+  background: #fff;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
+.menuButton {
+  width: 100%;
+  text-align: left;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.menuButton:hover {
+  background: #f0f0f0;
+}
+
+.open {
+  background: #e6f0ff;
+}
+
+.submenu {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.submenuLink {
+  display: block;
+  padding: 8px 12px;
+  text-decoration: none;
+  color: #555;
+  border-radius: 6px;
+}
+
+.submenuLink:hover {
+  background: #f5f5f5;
+}
+
+.activeLink {
+  background: #007bff;
+  color: white !important;
+  font-weight: bold;
+}

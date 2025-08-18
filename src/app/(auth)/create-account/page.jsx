@@ -72,7 +72,7 @@ export default function CreateAccount() {
       }
 
       alert('Account created successfully');
-      router.push(`/(auth)/sign-in?email=${encodeURIComponent(formData.email)}&success=1`);
+      router.push(`/sign-in?email=${encodeURIComponent(formData.email)}&success=1`);
     } catch (err) {
       setError(err.message || 'An error occurred');
     } finally {
@@ -145,7 +145,7 @@ export default function CreateAccount() {
 
         <p className={styles.signInText}>
           Already have an account?{' '}
-          <Link href="/(auth)/sign-in" className={styles.link}>
+          <Link href="/sign-in" className={styles.link}>
             Sign In
           </Link>
         </p>

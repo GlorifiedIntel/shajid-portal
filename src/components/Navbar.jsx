@@ -43,9 +43,6 @@ export default function Navbar() {
             <li>Prospective Student Info</li>
             <li>Fees & Financial Assistance</li>
             <li>Graduation Requirements</li>
-            <li>
-              <Link href="/apply">Apply Now</Link>
-            </li>
             <li>Advising & Support</li>
             <li>FAQs</li>
           </ul>
@@ -81,10 +78,10 @@ export default function Navbar() {
 
       {/* Action Buttons */}
       <div className={styles.actions}>
-        <Link href="/(auth)/sign-in" className={styles.loginBtn}>
+        <Link href="/sign-in" className={styles.loginBtn}>
           <FaSignInAlt className={styles.icon} /> Sign In
         </Link>
-        <Link href="/(auth)/create-account" className={styles.createAccountBtn}>
+        <Link href="/create-account" className={styles.createAccountBtn}>
           <FaUserPlus className={styles.icon} /> Create Account
         </Link>
       </div>
