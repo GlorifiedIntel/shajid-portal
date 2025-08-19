@@ -1,0 +1,117 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  font-size: 28px;
+  font-weight: bold;
+  text-align: center;
+}
+
+.subHeader {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.sectionTitle {
+  font-size: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+}
+
+.yearSection {
+  margin-bottom: 20px;
+}
+
+.semesterBlock {
+  margin-bottom: 15px;
+}
+
+.semesterButton {
+  background: #0070f3;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 8px;
+}
+
+.semesterButton:hover {
+  background: #005bb5;
+}
+
+.courseTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.courseTable th,
+.courseTable td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+.totalRow {
+  font-weight: bold;
+  background: #f0f0f0;
+}
+
+.addButton {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: green;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.addButton:hover:not(:disabled) {
+  background: darkgreen;
+}
+
+.addButton:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.reviewSection {
+  margin-top: 20px;
+}
+
+.spinnerContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+}
+
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 10px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.qrCode {
+  margin-top: 20px;
+}

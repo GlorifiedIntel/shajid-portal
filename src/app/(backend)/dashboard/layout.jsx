@@ -23,8 +23,9 @@ const menuItems = [
     key: "academics",
     icon: BookOpen,
     submenu: [
-      { label: "My Program", href: "/dashboard/academics/my-program" },
+      { label: "My Program", href: "/dashboard/academics/program" },
       { label: "Class Schedule", href: "/dashboard/academics/class-schedule" },
+      { label: "Course Registration", href: "/dashboard/academics/course-registration" },
     ],
   },
   {
