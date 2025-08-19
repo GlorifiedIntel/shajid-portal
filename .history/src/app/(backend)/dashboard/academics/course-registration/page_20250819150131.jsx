@@ -164,7 +164,7 @@ export default function CourseRegistrationPage() {
       <div className={styles.headerBlock}>
         <Image src="/logo2.png" alt="Shajid Logo" width={130} height={130} />
         <div>
-          <h1 className={styles.header}>Shajid Royal College of Nursing & Midwifery</h1>
+          <h1 className={styles.header}>Shajid Royal College of Nursing</h1>
           <p className={styles.address}>#73 Wamba Road, Opposite Central School, Akwanga, Nasarawa, Nigeria</p>
           <p className={styles.city}>Akwanga, Nasarawa, Nigeria</p>
           <h2 className={styles.subHeader}>
