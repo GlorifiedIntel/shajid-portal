@@ -4,7 +4,7 @@ import styles from "./AdmissionDashboard.module.css";
 
 export default function AdmissionDashboard() {
   // Sample applicants data (replace with API call)
-  const [applications, setApplications] = useState([
+  const [applications] = useState([
     {
       id: "APP001",
       fullName: "John Doe",
@@ -17,7 +17,6 @@ export default function AdmissionDashboard() {
         Physics: "C4",
         Biology: "B2",
       },
-      status: "pending",
     },
     {
       id: "APP002",
@@ -31,60 +30,20 @@ export default function AdmissionDashboard() {
         Physics: "C4",
         Biology: "C6",
       },
-      status: "pending",
-    },
-    {
-      id: "APP003",
-      fullName: "Ahmed Musa",
-      phone: "08123456789",
-      program: "Nursing",
-      results: {
-        Mathematics: "B3",
-        English: "C6",
-        Chemistry: "C5",
-        Physics: "B2",
-        Biology: "C6",
-      },
-      status: "pending",
     },
   ]);
 
   const [query, setQuery] = useState("");
 
-  // Handlers for admit/reject
-  const handleAdmit = (id) => {
-    setApplications((prev) =>
-      prev.map((app) =>
-        app.id === id ? { ...app, status: "admitted" } : app
-      )
-    );
-  };
-
-  const handleReject = (id) => {
-    setApplications((prev) =>
-      prev.map((app) =>
-        app.id === id ? { ...app, status: "rejected" } : app
-      )
-    );
-  };
-
-  const filteredApplications = applications.filter(
-    (app) =>
-      app.fullName.toLowerCase().includes(query.toLowerCase()) ||
-      app.phone.includes(query) ||
-      app.id.toLowerCase().includes(query.toLowerCase())
+  const filteredApplications = applications.filter((app) =>
+    app.fullName.toLowerCase().includes(query.toLowerCase()) ||
+    app.phone.includes(query) ||
+    app.id.toLowerCase().includes(query.toLowerCase())
   );
 
   const totalApplications = applications.length;
   const nursingCount = applications.filter((a) => a.program === "Nursing").length;
   const midwiferyCount = applications.filter((a) => a.program === "Midwifery").length;
-
-  // Helper: status badge class
-  const getStatusClass = (status) => {
-    if (status === "admitted") return styles.statusAdmitted;
-    if (status === "rejected") return styles.statusRejected;
-    return styles.statusPending;
-  };
 
   return (
     <div className={styles.container}>
@@ -125,7 +84,6 @@ export default function AdmissionDashboard() {
             <th>Phone</th>
             <th>Program</th>
             <th>WASSCE/NECO Results</th>
-            <th>Status</th>
             <th>Action</th>
           </tr>
         </thead>
@@ -143,7 +101,7 @@ export default function AdmissionDashboard() {
                       <li
                         key={subject}
                         className={
-                          ["A1", "B2", "B3", "C4", "C5", "C6"].includes(grade)
+                          ["A1","B2","B3","C4","C5","C6"].includes(grade)
                             ? styles.pass
                             : styles.fail
                         }
@@ -154,33 +112,14 @@ export default function AdmissionDashboard() {
                   </ul>
                 </td>
                 <td>
-                  <span className={`${styles.statusBadge} ${getStatusClass(app.status)}`}>
-                    {app.status}
-                  </span>
-                </td>
-                <td>
-                  <button
-                    className={styles.admitBtn}
-                    onClick={() => handleAdmit(app.id)}
-                    disabled={app.status === "admitted" || app.status === "rejected"}
-                  >
-                    Admit
-                  </button>
-                  <button
-                    className={styles.rejectBtn}
-                    onClick={() => handleReject(app.id)}
-                    disabled={app.status === "rejected" || app.status === "admitted"}
-                  >
-                    Reject
-                  </button>
+                  <button className={styles.admitBtn}>Admit</button>
+                  <button className={styles.rejectBtn}>Reject</button>
                 </td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="7" className={styles.noResults}>
-                No applications found.
-              </td>
+              <td colSpan="6" className={styles.noResults}>No applications found.</td>
             </tr>
           )}
         </tbody>
