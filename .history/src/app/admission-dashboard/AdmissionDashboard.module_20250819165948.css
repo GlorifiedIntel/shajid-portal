@@ -1,0 +1,122 @@
+.container {
+  padding: 2rem;
+  background: #f8fafc;
+  min-height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #1e293b;
+  text-align: center;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.statBox {
+  background: #011936;
+  padding: 1rem 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.statBox h2 {
+  font-size: 2rem;
+  margin: 0;
+  color: #0f172a;
+}
+
+.statBox p {
+  margin: 0;
+  color: #64748b;
+}
+
+.searchBar {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.searchBar input {
+  padding: 0.6rem 1rem;
+  width: 60%;
+  max-width: 400px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.table th,
+.table td {
+  border: 1px solid #e2e8f0;
+  padding: 0.75rem;
+  text-align: left;
+  font-size: 0.95rem;
+}
+
+.table th {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+.resultsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.resultsList li {
+  font-size: 0.9rem;
+}
+
+.pass {
+  color: green;
+  font-weight: 600;
+}
+
+.fail {
+  color: red;
+  font-weight: 600;
+}
+
+.admitBtn,
+.rejectBtn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.admitBtn {
+  background: #16a34a;
+  color: white;
+}
+
+.rejectBtn {
+  background: #dc2626;
+  color: white;
+}
+
+.noResults {
+  text-align: center;
+  color: #64748b;
+  padding: 1rem;
+}
